@@ -16,7 +16,7 @@ fi
 echo ""
 echo "开始安装Caddy"
 cd /tmp
-wget -q https://raw.githubusercontent.com/Jevanzhu/Caddy-Installer/main/caddy-1.0.5+F
+wget -q https://raw.githubusercontent.com/Jevanzhu/Installer/Caddy-Installer/main/caddy-1.0.5+F
 chmod +x caddy; mv caddy /usr/local/bin/caddy;
 mkdir /etc/caddy
 touch /etc/caddy/Caddyfile
@@ -32,7 +32,7 @@ mkdir /etc/ssl/caddy
 chown -R www:root /etc/ssl/caddy
 chmod 0770 /etc/ssl/caddy
 echo "配置systemd"
-curl -s https://raw.githubusercontent.com/Jevanzhu/Caddy-Installer/main/caddy.service -o /etc/systemd/system/caddy.service
+curl -s https://raw.githubusercontent.com/Jevanzhu/Installer/Caddy-Installer/main/caddy.service -o /etc/systemd/system/caddy.service
 systemctl daemon-reload
 systemctl enable caddy.service
 echo "设置端口绑定权限，Setcap命令"
